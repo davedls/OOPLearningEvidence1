@@ -110,11 +110,12 @@ public class Ticket extends Travel {
     }
 
     public void displayTravelDetails() {
-        System.out.println("\nRoute: " + getOrigin() + " - " + getDestination() + "\nScheduled Departure: " + getDepartureHours() + ":" + getDepartureMinutes() + "\nScheduled Arrival: " + getArrivalHours() + ":" + getArrivalMinutes() + "\n\n");
+        System.out.print("Route: " + getOrigin() + " - " + getDestination() + "\nScheduled Departure: " + getDepartureHours() + ":" + getDepartureMinutes() + "\nScheduled Arrival: " + getArrivalHours() + ":" + getArrivalMinutes() + "\n");
     }
 
     public void displayTicketDetails() {
-        System.out.println("\nTicket Price: " + getTicketPrice() + "\nTravel Class: " + getTravelClass() + "\n\n");
+        System.out.print("\nTicket Price: " + getTicketPrice() + "\nTravel Class: " + getTravelClass() + "\n");
     }
+
 
 }
