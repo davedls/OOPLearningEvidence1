@@ -6,13 +6,13 @@ public class PlaneTicket extends Ticket {
 
     public void setFlightInfo(){
         super.setTicketInfo();
-        System.out.print("Airline: ");
+        System.out.print("|Airline: ");
         this.airline = scan.nextLine();
-        System.out.print("Flight Number: ");
+        System.out.print("|Flight Number: ");
         this.flightNumber = scan.nextLine();
-        System.out.print("Seat Number: ");
+        System.out.print("|Seat Number: ");
         this.seatNumber = scan.nextLine();
-        System.out.print("Flight Meal: ");
+        System.out.print("|Flight Meal: ");
         this.inFlightMeal = scan.nextLine();
     }
 
@@ -34,16 +34,13 @@ public class PlaneTicket extends Ticket {
 
     @Override
     public void displayTravelDetails() {
-        System.out.println("Flight ");
+        System.out.print("|Flight ");
         super.displayTravelDetails();
     }
 
     @Override
     public void displayTicketDetails() {
         super.displayTicketDetails();
-        System.out.println("Seat Number: " + getSeatNumber() + "\nIn-Flight Meal: " + getInFlightMeal());
+        System.out.println("|Airline: " + getAirline() + "\n|Seat Number: " + getSeatNumber() + "\n|In-Flight Meal: " + getInFlightMeal());
     }
 }
-
-
-
