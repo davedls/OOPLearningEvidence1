@@ -3,7 +3,7 @@ public class Ticket extends Travel {
     /* Essential Ticket Components */
     private String origin, destination, travelClass;
     private int departureHours, departureMinutes, arrivalHours, arrivalMinutes, ticketPrice;
-    
+    private String[][] doubleDigit = {{"",""},{"",""}};
 
     public Ticket(){}
 
@@ -37,10 +37,15 @@ public class Ticket extends Travel {
                 if (hours < 0 || hours > 23 || minutes < 0 || minutes > 59) {
                     System.out.println("Time must be between 00:00 and 23:59.");
                     continue;
+                } if (hours < 10) {
+                    this.doubleDigit[0][0]="0";
+                } if (minutes < 10) {
+                    this.doubleDigit[0][1]="0";
                 }
         
                 this.departureHours = hours;
                 this.departureMinutes = minutes;
+                
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("Please enter numbers only. Example: 08:30");
@@ -59,12 +64,16 @@ public class Ticket extends Travel {
             try {
                 int hours = Integer.parseInt(parts[0]);
                 int minutes = Integer.parseInt(parts[1]);
-            
-                if (hours < 0 || hours > 23 || minutes < 0 || minutes > 59) {
+                
+                if (hours < 0 || hours > 23 && minutes < 0 || minutes > 59) {
                     System.out.println("Time must be between 00:00 and 23:59.");
                     continue;
+                } if (hours < 10) {
+                    this.doubleDigit[1][0]="0";
+                } if (minutes < 10) {
+                    this.doubleDigit[1][1]="0";
                 }
-        
+
                 this.arrivalHours = hours;
                 this.arrivalMinutes = minutes;
                 break;
@@ -110,7 +119,7 @@ public class Ticket extends Travel {
     }
 
     public void displayTravelDetails() {
-        System.out.print("Route: " + getOrigin() + " - " + getDestination() + "\nScheduled Departure: " + getDepartureHours() + ":" + getDepartureMinutes() + "\nScheduled Arrival: " + getArrivalHours() + ":" + getArrivalMinutes() + "\n");
+        System.out.print("Route: " + getOrigin() + " - " + getDestination() + "\nScheduled Departure: " + doubleDigit[0][0] + getDepartureHours() + ":" + doubleDigit[0][1] + getDepartureMinutes() + "\nScheduled Arrival: " + doubleDigit[1][0] + getArrivalHours() + ":" + doubleDigit[1][1] + getArrivalMinutes() + "\n");
     }
 
     public void displayTicketDetails() {
