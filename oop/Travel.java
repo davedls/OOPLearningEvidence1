@@ -40,7 +40,9 @@ public class Travel {
     }
 
     public void displayPersonalInfo() {
+        System.out.println("\n--------------------\n");
         System.out.println("\nPersonal Information:\nFull Name: " + getFirstName() + " " + getLastName() + "\nAge: " + getAge() + "\nNationality: " + getNationality() + "\nSex: " + getSex() + "\n\n");
     }
+
 
 }
