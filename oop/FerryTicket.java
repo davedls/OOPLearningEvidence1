@@ -5,9 +5,9 @@ public class FerryTicket extends Ticket{
 
     public void setFerryInfo(){
         super.setTicketInfo();
-        System.out.print("Cruise Line: ");
+        System.out.print("|Cruise Line: ");
         this.ferryCompany = scan.nextLine();
-        System.out.print("Vesel Name: ");
+        System.out.print("|Vesel Name: ");
         this.vesselName = scan.nextLine();
     }
 
@@ -21,11 +21,9 @@ public class FerryTicket extends Ticket{
 
     @Override
     public void displayTravelDetails() {
-        System.out.println("Ferry ");
+        System.out.print("|Ferry ");
         super.displayTravelDetails();
-        System.out.println("\nFerry Company: " + getFerryCompany() + "\nVessel Name: " + getVesselName());
+        System.out.println("\n|Ferry Company: " + getFerryCompany() + "\n|Vessel Name: " + getVesselName());
     }
 
 }
-
-
