@@ -40,8 +40,10 @@ public class PlaneTicket extends Ticket {
 
     @Override
     public void displayTicketDetails() {
+        System.out.println("\n--------------------\n");
         super.displayTicketDetails();
         System.out.println("Seat Number: " + getSeatNumber() + "\nIn-Flight Meal: " + getInFlightMeal());
     }
 }
+
 
