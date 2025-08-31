@@ -1,7 +1,7 @@
 
 public class Ticket extends Travel {
     /* Essential Ticket Components */
-    private String origin, destination, travelClass;
+    private String origin, destination, travelClass, PriceInput;
     private int departureHours, departureMinutes, arrivalHours, arrivalMinutes, ticketPrice;
     private String[][] doubleDigit = {{"",""},{"",""}};
 
@@ -10,23 +10,23 @@ public class Ticket extends Travel {
     public void setTicketInfo(){
         
         super.setTravelInfo();
-
-        System.out.print("Origin: ");
+        System.out.println("|=====================\n|\n|Travel Details\n|\n|=====================");
+        System.out.print("|Origin: ");
         this.origin = scan.nextLine();
 
-        System.out.print("Destination: ");
+        System.out.print("|Destination: ");
         this.destination = scan.nextLine();
 
-        System.out.print("Travel Class: ");
+        System.out.print("|Travel Class: ");
         this.travelClass = scan.nextLine();
 
         while (true) {
-            System.out.print("Departure Time (HH:MM): ");
+            System.out.print("|Departure Time (HH:MM): ");
             String depTime = scan.nextLine();
             String[] parts = depTime.split(":");
 
             if (parts.length != 2) {
-                System.out.println("Invalid format. Please enter time as HH:MM.");
+                System.out.println("| <ERROR><[ Invalid format. Please enter time as HH:MM ]><ERROR>");
                 continue;
             }
         
@@ -35,7 +35,7 @@ public class Ticket extends Travel {
                 int minutes = Integer.parseInt(parts[1]);
             
                 if (hours < 0 || hours > 23 || minutes < 0 || minutes > 59) {
-                    System.out.println("Time must be between 00:00 and 23:59.");
+                    System.out.println("| <ERROR><[ Time must be between 00:00 and 23:59 ]><ERROR>");
                     continue;
                 } if (hours < 10) {
                     this.doubleDigit[0][0]="0";
@@ -48,16 +48,16 @@ public class Ticket extends Travel {
                 
                 break;
             } catch (NumberFormatException e) {
-                System.out.println("Please enter numbers only. Example: 08:30");
+                System.out.println("| <ERROR><[ Please enter numbers only. Example: 08:30 ]><ERROR>");
             }
         }
         while (true) {
-            System.out.print("Arrival Time (HH:MM): ");
+            System.out.print("|Arrival Time (HH:MM): ");
             String depTime = scan.nextLine();
             String[] parts = depTime.split(":");
 
             if (parts.length != 2) {
-                System.out.println("Invalid format. Please enter time as HH:MM.");
+                System.out.println("| <ERROR><[ Invalid format. Please enter time as HH:MM ]><ERROR>");
                 continue;
             }
         
@@ -66,7 +66,7 @@ public class Ticket extends Travel {
                 int minutes = Integer.parseInt(parts[1]);
                 
                 if (hours < 0 || hours > 23 && minutes < 0 || minutes > 59) {
-                    System.out.println("Time must be between 00:00 and 23:59.");
+                    System.out.println("| <ERROR><[ Time must be between 00:00 and 23:59 ]><ERROR>");
                     continue;
                 } if (hours < 10) {
                     this.doubleDigit[1][0]="0";
@@ -77,13 +77,21 @@ public class Ticket extends Travel {
                 this.arrivalHours = hours;
                 this.arrivalMinutes = minutes;
                 break;
-            } catch (NumberFormatException e) {
-                System.out.println("Please enter numbers only. Example: 08:30");
+            } catch(NumberFormatException e) {
+                System.out.println("| <ERROR><[ Please enter numbers only. Example: 08:30 ]><ERROR>");
             }
         }
+        while(true){
+            System.out.print("|Ticket Price: ");
+            this.PriceInput = scan.nextLine();
+            try{                
+                this.ticketPrice = Integer.parseInt(PriceInput);
+                break;
+            } catch(NumberFormatException e){
+                System.out.println("| <ERROR><[ Please enter numbers only ]><ERROR>");
+            }         
+        }
         
-        System.out.print("Ticket Price: ");
-        this.ticketPrice = Integer.parseInt(scan.nextLine());
     } 
 
     public String getOrigin() {
@@ -119,11 +127,11 @@ public class Ticket extends Travel {
     }
 
     public void displayTravelDetails() {
-        System.out.print("Route: " + getOrigin() + " - " + getDestination() + "\nScheduled Departure: " + doubleDigit[0][0] + getDepartureHours() + ":" + doubleDigit[0][1] + getDepartureMinutes() + "\nScheduled Arrival: " + doubleDigit[1][0] + getArrivalHours() + ":" + doubleDigit[1][1] + getArrivalMinutes() + "\n");
+        System.out.print("Route: " + getOrigin() + " - " + getDestination() + "\n|Scheduled Departure: " + doubleDigit[0][0] + getDepartureHours() + ":" + doubleDigit[0][1] + getDepartureMinutes() + "\n|Scheduled Arrival: " + doubleDigit[1][0] + getArrivalHours() + ":" + doubleDigit[1][1] + getArrivalMinutes());
     }
 
     public void displayTicketDetails() {
-        System.out.print("\nTicket Price: " + getTicketPrice() + "\nTravel Class: " + getTravelClass() + "\n");
+        System.out.println("|Ticket Price: " + getTicketPrice() + "\n|Travel Class: " + getTravelClass());
     }
 
 
