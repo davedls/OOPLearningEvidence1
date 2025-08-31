@@ -7,16 +7,16 @@ public class Travel {
     public Travel(){}
 
     public void setTravelInfo(){
-        System.out.println("\n--------------------\n");
-        System.out.print("First Name: ");
+        System.out.println("|=====================\n|\n|Personal Information\n|\n|=====================");
+        System.out.print("|First Name: ");
         this.firstName = scan.nextLine();
-        System.out.print("Last Name: ");
+        System.out.print("|Last Name: ");
         this.lastName = scan.nextLine();
-        System.out.print("Age: ");
+        System.out.print("|Age: ");
         this.age = Integer.parseInt(scan.nextLine());
-        System.out.print("Nationality: ");
+        System.out.print("|Nationality: ");
         this.nationality = scan.nextLine();
-        System.out.print("sex: ");
+        System.out.print("|sex: ");
         this.sex = scan.nextLine();
     }
 
@@ -41,9 +41,7 @@ public class Travel {
     }
 
     public void displayPersonalInfo() {
-        System.out.println("\nPersonal Information:\nFull Name: " + getFirstName() + " " + getLastName() + "\nAge: " + getAge() + "\nNationality: " + getNationality() + "\nSex: " + getSex() + "\n\n");
+        System.out.println("|=====================\n|\n|Ticket Details\n|\n|=====================\n|Full Name: " + getFirstName() + " " + getLastName() + "\n|Age: " + getAge() + "\n|Nationality: " + getNationality() + "\n|Sex: " + getSex());
     }
 
-
 }
-
