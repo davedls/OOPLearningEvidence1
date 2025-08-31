@@ -7,6 +7,7 @@ public class Travel {
     public Travel(){}
 
     public void setTravelInfo(){
+        System.out.println("\n--------------------\n");
         System.out.print("First Name: ");
         this.firstName = scan.nextLine();
         System.out.print("Last Name: ");
@@ -40,9 +41,9 @@ public class Travel {
     }
 
     public void displayPersonalInfo() {
-        System.out.println("\n--------------------\n");
         System.out.println("\nPersonal Information:\nFull Name: " + getFirstName() + " " + getLastName() + "\nAge: " + getAge() + "\nNationality: " + getNationality() + "\nSex: " + getSex() + "\n\n");
     }
 
 
 }
+
