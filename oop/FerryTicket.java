@@ -21,8 +21,9 @@ public class FerryTicket extends Ticket{
 
     @Override
     public void displayTravelDetails() {
-        System.out.print("Ferry ");
+        System.out.println("Ferry ");
         super.displayTravelDetails();
         System.out.println("\nFerry Company: " + getFerryCompany() + "\nVessel Name: " + getVesselName());
     }
+
 }
