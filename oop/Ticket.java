@@ -7,6 +7,19 @@ public class Ticket extends Travel {
 
     public Ticket(){}
 
+    public void setTicketInfo(String origin, String destination, String travelClass, int depHour, int depMin, int arrHour, int arrMin, int ticketPrice) {
+        super.setTravelInfo("John", "Doe", 30, "American", "Male");
+        this.origin = origin;
+        this.destination = destination;
+        this.travelClass = travelClass;
+
+        this.departureHours = depHour;
+        this.departureMinutes = depMin;
+        this.arrivalHours = arrHour;
+        this.arrivalMinutes = arrMin;
+        this.ticketPrice = ticketPrice;
+    }
+
     public void setTicketInfo(){
         
         super.setTravelInfo();
@@ -136,3 +149,4 @@ public class Ticket extends Travel {
 
 
 }
+
