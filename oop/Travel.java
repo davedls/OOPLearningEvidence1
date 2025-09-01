@@ -6,6 +6,14 @@ public class Travel {
 
     public Travel(){}
 
+    public void setTravelInfo(String firstName, String lastName, int age, String nationality, String sex) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.nationality = nationality;
+        this.sex = sex;
+    }
+
     public void setTravelInfo(){
         System.out.println("|=====================\n|\n|Personal Information\n|\n|=====================");
         System.out.print("|First Name: ");
@@ -45,3 +53,4 @@ public class Travel {
     }
 
 }
+
