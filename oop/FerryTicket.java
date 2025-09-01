@@ -3,6 +3,11 @@ public class FerryTicket extends Ticket{
 
     public FerryTicket(){}
 
+    public void setFerryInfo(String ferryCompany, String vesselName) {
+        this.ferryCompany = ferryCompany;
+        this.vesselName = vesselName;
+    }
+
     public void setFerryInfo(){
         super.setTicketInfo();
         System.out.print("|Cruise Line: ");
@@ -27,3 +32,4 @@ public class FerryTicket extends Ticket{
     }
 
 }
+
