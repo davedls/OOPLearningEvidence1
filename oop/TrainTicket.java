@@ -4,6 +4,11 @@ public class TrainTicket extends Ticket{
 
     public TrainTicket (){}
 
+    public void setTrainInfo(String TrainStation, String TrainNumber){
+        this.TrainStation = TrainStation;
+        this.TrainNumber = TrainNumber;
+    }
+
     public void setTrainInfo(){
         super.setTicketInfo();
         System.out.print("|Train Station: ");
@@ -30,3 +35,4 @@ public class TrainTicket extends Ticket{
 
 
 }
+
